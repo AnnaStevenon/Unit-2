@@ -36,22 +36,19 @@ function calculateMinValue(data){
             for(var yearEnd = 1999; yearEnd <= 2023; yearEnd += 3){
             //get population for current year
             var value = Country.properties["Publications_" + String(yearStart) + "_" + String(yearEnd)];
-            allValues.push(value)
+            if(value > 0){
+                allValues.push(value)  
+            }
          }
         
         }
     }
 
 //get minimum value of our array
-// Struggling with values of 0
     
     var minValue = Math.min(...allValues)
-    if(minValue > 0) {
+console.log(minValue)
     return minValue;
-    }
-    else {
-        return minValue = 1
-    }
 
 };
 
@@ -61,12 +58,12 @@ function calculateMinValue(data){
 
 function calcPropRadius(attValue) {
     if(attValue > 0 && minValue > 0){
-        var minRadius = 2;
+        var minRadius = 3;
         var radius = 1.0083 * Math.pow(attValue/minValue,0.5715) * minRadius
         return radius;
     }
     else {
-        radius = 2
+        return 3; // can change size for zero data here, will change color later
     }
 }
 
@@ -74,7 +71,7 @@ function calcPropRadius(attValue) {
 function updatePropSymbols(attribute){
     map.eachLayer(function(layer){
         //console.log("here!");
-        if (layer.feature && layer.feature.properties[attribute]) {
+        if (layer.feature && layer.feature.properties[attribute] > -1 ) {
             //access feature properties
             var props = layer.feature.properties;
 
@@ -88,8 +85,12 @@ function updatePropSymbols(attribute){
             //add formatted attribute to panel content string
             var yearStart = attribute.split("_")[1];
             var yearEnd = attribute.split("_")[2]
-            popupContent += "<p><b>Publications from " + yearStart + " to " + yearEnd + ": </b>" + feature.properties[attribute] + "</p>";
-            
+            if(props[attribute] > 0){
+            popupContent += "<p><b>Publications from " + yearStart + " to " + yearEnd + ": </b>" + layer.feature.properties[attribute] + "</p>";
+            } else {
+                popupContent += "No publications for these years!"
+            }
+
             //update popup with new content
             popup = layer.getPopup();
             popup.setContent(popupContent).update();

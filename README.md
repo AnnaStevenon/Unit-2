@@ -3,7 +3,7 @@
 ### **Author:** Anna Stevenson
 
 ### **Dependencies:**
-    * [ Leaflet 1.9.3](https://leafletjs.com/reference.html)
+    * [Leaflet 1.9.3](https://leafletjs.com/reference.html)
 
 ### **Code Version:**
 Last updated: March 8, 2023

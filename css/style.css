@@ -1,9 +1,14 @@
 /*Add CSS styles here*/
 
+body {
+    background-color: rgb(255, 228, 202);
+}
+
 #map {
     height:550px;
     width: 100%;
     display: inline-block;
+    border:solid #ce7018 2px;
 }
 
 .sequence-control-container {
@@ -13,7 +18,7 @@
     padding: 15px;
     line-height: 45px;
     text-align: center;
-    border: solid #DA4453 2px;
+    border: solid #ce7018 2px;
 }
 
 .range-slider {
@@ -43,7 +48,7 @@
     background-color: rgba(255,255,255,0.8);
     padding: 10px;
     text-align: center;
-    border: solid #DA4453 2px;
+    border: solid #ce7018 2px;
 }
 
 .legend-control-container p{
@@ -53,12 +58,22 @@
 .header {
     padding: 1px;
     text-align: center;
-    background: white;
-    font-size: 20px;
-    color: #DA4453;
+    background: rgb(255, 228, 202);
+    font-size: 24px;
+    color: #ce6118;
 }
 
 .note {
     padding: 1px;
     text-align: center;
+}
+
+.leaflet-popup-content{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.leaflet-popup-content-wrapper{
+    border:solid #ce7018 2px;
+
 }

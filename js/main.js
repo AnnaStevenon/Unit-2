@@ -106,7 +106,7 @@ function PopupContent(properties, attribute){ //"this" references the value of t
 function pointToLayer(feature, latlng, attributes){
     var attribute = attributes[0] 
     var options = {
-        fillColor: "#ED5565",
+        fillColor: "#ce7018",
         color: "#000000",
         weight: 1,
         opacity: 1,
@@ -235,7 +235,7 @@ function createLegend(attributes){
                 var radius = calcPropRadius(dataStats[circles[i]]);
                 var cy = 140 - radius;
                 //circle string
-                svg += '<circle class="legend-circle" id="' + circles[i] + '" r="' + radius + '"cy="' + cy + '" fill="#ED5565" fill-opacity="0.8" stroke="#000000" cx="65"/>';
+                svg += '<circle class="legend-circle" id="' + circles[i] + '" r="' + radius + '"cy="' + cy + '" fill="#ce7018" fill-opacity="0.8" stroke="#000000" cx="65"/>';
             //evenly space out labels            
             var textY = i * 50 + 35;            
 

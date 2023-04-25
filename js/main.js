@@ -120,7 +120,6 @@ function pointToLayer(feature, latlng, attributes){
     layer.bindPopup(popup.formatted, {
         offset: new L.Point(0,-options.radius)
     });
-
     // return the circle marker to the L.geojson pointToLayer option
     return layer;
 };

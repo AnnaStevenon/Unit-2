@@ -71,9 +71,19 @@ body {
 .leaflet-popup-content{
     font-family:'Times New Roman', Times, serif;
     font-size: 14px;
+    background-color: white;
+    fill-opacity: 0.5;
 }
 
 .leaflet-popup-content-wrapper{
     border:solid #ce7018 2px;
 
+}
+
+.leaflet-control-zoom-out {
+    border:solid #ce7018 2px;
+}
+
+.leaflet-control-zoom-in {
+    border:solid #ce7018 2px;
 }
